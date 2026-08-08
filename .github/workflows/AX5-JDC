@@ -1,0 +1,36 @@
+# AX5(JDC版) 无WiFi 编译
+# Fork: https://github.com/VIKINGYFY/OpenWRT-CI
+# 触发: Actions → AX5-JDC → Run workflow
+
+name: AX5-JDC
+
+on:
+  workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  build:
+    uses: ./.github/workflows/WRT-CORE.yml
+    with:
+      # 使用专属配置（仅 AX5-JDC + 无WiFi）
+      WRT_CONFIG: AX5-JDC
+      # 主题
+      WRT_THEME: argon
+      # 主机名
+      WRT_NAME: OWRT
+      # WiFi名称（无WiFi版本，此值无效）
+      WRT_SSID: OWRT
+      # WiFi密码（无WiFi版本，此值无效）
+      WRT_WORD: 12345678
+      # LAN地址
+      WRT_IP: 192.168.30.1
+      # 登录密码
+      WRT_PW: password
+      # 源码
+      WRT_REPO: https://github.com/VIKINGYFY/immortalwrt.git
+      WRT_BRANCH: main
+      WRT_SOURCE: VIKINGYFY/immortalwrt
+      # 追加插件（以下为 GENERAL.txt 之外需要额外添加的）
+      WRT_PACKAGE: |
+        CONFIG_PACKAGE_luci-app-appfilter=y
