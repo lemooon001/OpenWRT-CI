@@ -3,7 +3,7 @@ CONFIG_TARGET_qualcommax=y
 CONFIG_TARGET_qualcommax_ipq60xx=y
 #设备列表（仅 AX5-JDC）
 CONFIG_TARGET_DEVICE_qualcommax_ipq60xx_DEVICE_redmi_ax5-jdcloud=y
-CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq60xx_DEVICE_redmi_ax5-jdcloud="zram-swap"
+CONFIG_TARGET_DEVICE_PACKAGES_qualcommax_ipq60xx_DEVICE_redmi_ax5-jdcloud=""
 #WIFI驱动（=n 否定，参照 VIKINGYFY）
 CONFIG_PACKAGE_kmod-ath=n
 CONFIG_PACKAGE_kmod-ath11k=n
